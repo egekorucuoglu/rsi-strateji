@@ -29,35 +29,3 @@ cd rsi-strateji
 pip install -r requirements.txt
 python -m streamlit run app.py
 ```
-
-## Proje yapısı
-
-| Dosya | Görevi |
-|---|---|
-| `strateji.py` | Veri çekme, RSI hesabı, pozisyon üretimi, backtest, grafik |
-| `app.py` | Streamlit arayüzü |
-| `requirements.txt` | Gerekli kütüphaneler |
-
-## Örnek sonuç (BTC-USD, 2021'den bugüne, RSI 14, eşikler 30/70, komisyon %0,1)
-
-| | Al-Bekle | RSI Stratejisi |
-|---|---|---|
-| Getiri | %106,4 | %-41,3 |
-| Maksimum düşüş | %-76,6 | %-64,5 |
-
-Bu sonuç, tek göstergeli basit bir RSI stratejisinin güçlü trend dönemlerinde işe yaramadığını gösteriyor.
-
-## Sınırlamalar
-
-- Sadece tek gösterge ve tek varlık
-- Kayma (slippage) hesaba katılmıyor
-- Eğitim/test ayrımı yok, aşırı uyum (overfitting) riski kontrol edilmedi
-- Geçmiş performans geleceği garanti etmez
-
-## Yol haritası
-
-- [ ] Trend filtresi (200 günlük hareketli ortalama)
-- [ ] Eğitim/test veri ayrımı
-- [ ] Birden fazla gösterge (MACD, Bollinger)
-- [ ] Makine öğrenmesi tabanlı sinyal modeli
-- [ ] Streamlit Community Cloud ile yayınlama
